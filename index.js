@@ -1,4 +1,6 @@
 //ejercicio 1
+let nombre = "ALAN";
+formatearNombre(nombre)
 function formatearNombre(nombre){
     let nombreMinuscula = nombre.slice(1).toLowerCase();
     let nombreMayuscula = nombre[0].toUpperCase();
@@ -6,12 +8,19 @@ function formatearNombre(nombre){
 }
 
 //ejercicio 2
+
+let texto = "Hola como estas"
+contarLetras(texto);
 function contarLetras(texto){
 let contarTexto = texto.replace(/ /g,"").length;
 return contarTexto;
 }
 
 //ejercicio 3
+let a = 2
+let b = 3
+let c = 5
+maxNumero(a,b,c)
 function maxNumero(a,b,c){
 if(a > b && a > c){
     return a;
@@ -24,6 +33,9 @@ else if(c > a && c > b){
 }
 
 //ejercicio 4
+
+let contra = "todobin123"
+validarPassword(contra);
 function validarPassword(password){
     if(password.length >= 8 ){
     for(let i = 0; i < password.length; i++){
@@ -38,9 +50,10 @@ function validarPassword(password){
     return false
 }
 
-console.log(validarPassword("jhgadh1hdh"))
 
 //ejercicio 5
+
+
 function sumaArray(numeros){
 let listaNumeros = 0;
 for(let i = 0; i < numeros.length; i++){
@@ -49,6 +62,8 @@ for(let i = 0; i < numeros.length; i++){
 
 return listaNumeros
 }
+
+console.log(sumaArray([3,5,10]))
 
 //ejercicio 6
 
@@ -62,6 +77,8 @@ for(let i = 0; i < numeros.length; i++){
 return numeroMayor;
 }
 
+console.log(mayorNumero([24,47,21,24,3]))
+
 //ejercicio 7
 
 function obtenerPares(numeros){
@@ -74,6 +91,8 @@ for (let i = 0; i < numeros.length; i++){
 return numerosPares;
 }
 
+console.log(obtenerPares([4,2,7,5,8,1]))
+
 //ejercicio 8
 
 function descripcionUsuario(usuario){
@@ -82,6 +101,8 @@ let descUser = `${usuario.nombre} tiene ${usuario.edad} años`
 
 return descUser
 }
+
+console.log(descripcionUsuario({nombre:"Nico", edad:21}))
 
 //ejercicio 9
 
@@ -101,6 +122,7 @@ for(let i = 0; i < productos.length; i++){
 return precioTotal;
 }
 
+console.log(calcularPrecio([{nombre:"Mouse",precio:10},{nombre:"Teclado",precio:25},{nombre:"Monitor",precio:200}]))
 
 //ejercicio 11
 
@@ -112,6 +134,8 @@ return nombreUsuarios;
 
 }
 
+console.log(nombresUsuarios([{nombre:"Ana",edad:17},{nombre:"Juan",edad:25}]))
+
 //ejercicio 12
 
 function usuariosMay(usuarios){
@@ -122,15 +146,19 @@ function usuariosMay(usuarios){
 
 }
 
+console.log(usuariosMay([{nombre:"Ana",edad:17},{nombre:"Juan",edad:25}]))
+
 //ejercicio 13
 
 function sumaEdades(usuarios){
 
-    let edades = usuarios.reduce((total,edad) => total + edad, 0)
+    let edades = usuarios.reduce((total,usuario) => total + usuario.edad, 0)
 
     return edades
 
 }
+
+console.log(sumaEdades([{nombre:"Ana",edad:17},{nombre:"Juan",edad:25}]))
 
 //ejercicio 14 no lo vimos
 
@@ -153,26 +181,32 @@ function buscarProducto(productos, nombre){
 
 }
 
+console.log(buscarProducto([{nombre:"Mouse",precio:10},{nombre:"Teclado",precio:25}], "Mouse"))
+
 //ejercicio 17
 
 function productoM(productos){
 
-    let productosM = productos.filter(e => e.precio += precio >50)
+    let productosM = productos.filter(e => e.precio > 50)
 
     return productosM
 
 }
 
+console.log(productoM([{nombre:"Mouse",precio:10},{nombre:"Monitor",precio:200}]))
+
 //ejercicio 18
 
 function promedio(numeros){
 
-    let notaNum = numeros.num
+    let notaNum = sumaArray(numeros)
     let cantidadNum = numeros.length
     let promedioNum = notaNum / cantidadNum
 
     return promedioNum
 }
+
+console.log(promedio([10,8,6,9]))
 
 //ejercicio 19 
 
@@ -191,6 +225,8 @@ function obtenerUsuarios(){
     return usuarios
 }
 
+console.log(obtenerUsuarios())
+
 //ejercicio 20 
 
 function obtenerUsuarioPorId(id){
@@ -201,6 +237,8 @@ function obtenerUsuarioPorId(id){
     
 }
 
+console.log(obtenerUsuarioPorId(2))
+
 //ejercicio 21
 
 function obtenerMayores(){
@@ -210,6 +248,8 @@ function obtenerMayores(){
     return usuariosMay
 }
 
+console.log(obtenerMayores())
+
 //ejercicio 22
 
 function agregarUsuario(nombre, edad){
@@ -217,6 +257,5 @@ function agregarUsuario(nombre, edad){
     usuarios.push({id: usuarios.length + 1, nombre: nombre, edad: edad})
     
 }
-
 
 
